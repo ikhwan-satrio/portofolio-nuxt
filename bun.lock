@@ -51,6 +51,10 @@
   },
   "trustedDependencies": [
     "@tailwindcss/oxide",
+    "esbuild",
+    "sharp",
+    "unrs-resolver",
+    "vue-demi",
     "@parcel/watcher",
   ],
   "packages": {
