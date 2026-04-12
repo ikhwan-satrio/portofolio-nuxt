@@ -31,7 +31,7 @@ if (!blog.value) {
 
 <template>
   <main
-    class="w-full min-h-screen bg-background text-foreground px-4 pb-10 pt-[100px]"
+    class="w-full min-h-screen bg-background text-foreground px-4 pb-10 pt-25"
   >
     <!-- Container Utama -->
     <div class="max-w-6xl mx-auto space-y-16">

@@ -2,7 +2,7 @@
 const currentYear = new Date().getFullYear()
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/wanto-production', icon: 'fa:github' },
+  { name: 'GitHub', href: 'https://github.com/ikhwan-satrio', icon: 'fa:github' },
   { name: 'LinkedIn', href: 'https://linkedin.com/in/ikhwan-satrio', icon: 'fa:linkedin' },
   { name: 'Twitter', href: 'https://twitter.com/ikhwansatrio', icon: 'fa:twitter' },
   { name: 'Instagram', href: 'https://www.instagram.com/wantoobrrrrrr/', icon: 'fa:instagram' },

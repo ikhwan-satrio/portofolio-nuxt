@@ -27,7 +27,7 @@
     "gsap": "^3.13.0",
     "lucide-vue-next": "^0.553.0",
     "motion-v": "^1.7.4",
-    "nuxt": "^4.2.1",
+    "nuxt": "^4.4.2",
     "nuxt-resend": "^0.0.2",
     "ogl": "^1.0.11",
     "postprocessing": "^6.38.0",

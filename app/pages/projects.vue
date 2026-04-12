@@ -286,7 +286,7 @@ const projects = [
     category: 'web',
     technologies: ['AstroJS', 'TypeScript', 'Tailwind CSS', 'SolidJS'],
     demoUrl: 'https://portofolio-ikhwan.vercel.app',
-    githubUrl: 'https://github.com/wanto-production/astro-portofolio',
+    githubUrl: 'https://github.com/ikhwan-satrio/astro-portofolio',
     status: 'completed',
   },
   {
@@ -295,7 +295,7 @@ const projects = [
     description: 'Lenovo Vantage for Linux, built with Tauri and Svelte',
     category: 'opensource',
     technologies: ['Svelte', 'Tauri', 'Rust', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/wanto-production/linux_vantage',
+    githubUrl: 'https://github.com/ikhwan-satrio/linux_vantage',
     status: 'completed',
   },
   {
@@ -304,7 +304,7 @@ const projects = [
     description: 'Telegram bot that downloads TikTok videos without watermark',
     category: 'opensource',
     technologies: ['TypeScript', 'Deno', 'WebHook'],
-    githubUrl: 'https://github.com/wanto-production/deno_telegrambot',
+    githubUrl: 'https://github.com/ikhwan-satrio/deno_telegrambot',
     status: 'completed',
   },
 ];

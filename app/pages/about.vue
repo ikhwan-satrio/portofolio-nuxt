@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import image from '~/assets/images/nishimiya.jpeg';
 
-// State management (replacement for Jotai)
-const activeTab = ref('story');
-
 // SEO Meta Tags
 useHead({
   title: 'about',
@@ -42,8 +39,6 @@ const interests = [
   { emoji: '🌟', title: 'Open Source', desc: 'Contributing to community' },
   { emoji: '🚀', title: 'Innovation', desc: 'Building the future' },
 ];
-
-const tabs = ['story', 'skills', 'journey', 'interests'];
 </script>
 
 <template>
@@ -68,7 +63,7 @@ const tabs = ['story', 'skills', 'journey', 'interests'];
           <img
             :src="image"
             alt="Profile"
-            class="h-[150px] w-[150px] rounded-full object-cover shadow-2xl border-4 border-border/50"
+            class="h-37.5 w-37.5 rounded-full object-cover shadow-2xl border-4 border-border/50"
           />
         </BitsAnimationsGlareHover>
       </div>
@@ -79,18 +74,24 @@ const tabs = ['story', 'skills', 'journey', 'interests'];
           <BitsTextAnimationsSplitText
             text="About Ikhwan Satrio"
             class-name="font-poppins text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight "
-            :delay="100"
-            :duration="0.6"
             ease="power3.out"
             split-type="chars"
+            root-margin="-100px"
+            text-align="center"
+            :delay="100"
+            :duration="0.6"
             :from="{ opacity: 0, y: 40 }"
             :to="{ opacity: 1, y: 0 }"
             :threshold="0.1"
-            root-margin="-100px"
-            text-align="center"
           />
           <BitsTextAnimationsTextType
-            class="font-inter text-lg sm:text-xl md:text-2xl text-muted-foreground"
+            class="font-inter text-lg sm:text-xl md:text-2xl"
+            :textColors="[
+              'var(--color-chart-1)',
+              'var(--color-chart-4)',
+              'var(--color-chart-3)',
+              'var(--color-chart-2)',
+            ]"
             :text="[
               'Passionate Developer',
               'Problem Solver',
@@ -105,32 +106,29 @@ const tabs = ['story', 'skills', 'journey', 'interests'];
         </ClientOnly>
       </div>
 
-      <!-- Navigation Tabs -->
-      <div class="flex flex-wrap justify-center gap-3 z-10 mt-4">
-        <button
-          v-for="tab in tabs"
-          :key="tab"
-          @click="activeTab = tab"
-          class="px-6 py-2 rounded-xl font-medium transition-all duration-300 capitalize"
-          :class="
-            activeTab === tab
-              ? 'bg-primary text-primary-foreground shadow-lg'
-              : 'border border-border text-muted-foreground hover:bg-muted hover:text-foreground'
-          "
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg
+          class="w-6 h-6 text-muted-foreground"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
         >
-          {{ tab }}
-        </button>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
       </div>
     </section>
 
     <!-- Content Sections -->
-    <section class="w-full min-h-screen flex items-center">
+    <!-- Story Section -->
+    <section class="w-full py-24 flex items-center border-t-2 border-border">
       <div class="max-w-6xl mx-auto px-6 w-full">
-        <!-- Story Tab -->
-        <div
-          v-if="activeTab === 'story'"
-          class="space-y-12 animate-in slide-in-from-bottom-4 duration-700"
-        >
+        <div class="space-y-12">
           <div class="text-center">
             <h2
               class="text-4xl font-bold bg-linear-to-r from-chart-1 via-chart-4 to-chart-3 bg-clip-text text-transparent mb-6 p-2"
@@ -203,12 +201,13 @@ const tabs = ['story', 'skills', 'journey', 'interests'];
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Skills Tab -->
-        <div
-          v-if="activeTab === 'skills'"
-          class="space-y-12 animate-in slide-in-from-bottom-4 duration-700"
-        >
+    <!-- Skills Section -->
+    <section class="w-full py-24 flex items-center bg-muted/30 border-t-2 border-border">
+      <div class="max-w-6xl mx-auto px-6 w-full">
+        <div class="space-y-12">
           <div class="text-center">
             <h2
               class="text-4xl font-bold bg-linear-to-r from-chart-1 via-chart-4 to-chart-3 bg-clip-text text-transparent mb-6 p-2"
@@ -257,12 +256,13 @@ const tabs = ['story', 'skills', 'journey', 'interests'];
             </p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Journey Tab -->
-        <div
-          v-if="activeTab === 'journey'"
-          class="space-y-12 animate-in slide-in-from-bottom-4 duration-700"
-        >
+    <!-- Journey Section -->
+    <section class="w-full py-24 flex items-center border-t-2 border-border">
+      <div class="max-w-6xl mx-auto px-6 w-full">
+        <div class="space-y-12">
           <div class="text-center">
             <h2
               class="text-4xl font-bold bg-linear-to-r from-chart-1 via-chart-4 to-chart-3 bg-clip-text text-transparent mb-6 p-2"
@@ -328,12 +328,13 @@ const tabs = ['story', 'skills', 'journey', 'interests'];
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Interests Tab -->
-        <div
-          v-if="activeTab === 'interests'"
-          class="space-y-12 animate-in slide-in-from-bottom-4 duration-700"
-        >
+    <!-- Interests Section -->
+    <section class="w-full py-24 flex items-center bg-muted/30 border-t-2 border-border">
+      <div class="max-w-6xl mx-auto px-6 w-full">
+        <div class="space-y-12">
           <div class="text-center">
             <h2
               class="text-4xl font-bold bg-linear-to-r from-chart-1 via-chart-4 to-chart-3 bg-clip-text text-transparent mb-6 p-2"
@@ -390,7 +391,7 @@ const tabs = ['story', 'skills', 'journey', 'interests'];
 
     <!-- Fun fact section --->
     <section
-      class="w-full min-h-screen h-fit p-6 bg-background flex items-center text-foreground"
+      class="w-full min-h-screen h-fit p-6 bg-background flex items-center text-foreground border-t-2 border-border"
     >
       <div class="max-w-4xl mx-auto text-center px-4">
         <h2 class="text-3xl font-bold mb-6 text-secondary-foreground">
@@ -410,7 +411,7 @@ const tabs = ['story', 'skills', 'journey', 'interests'];
     </section>
 
     <!-- CTA Section -->
-    <section class="w-full py-20">
+    <section class="w-full py-20 border-t-2 border-border">
       <div class="max-w-4xl mx-auto text-center px-6">
         <div
           class="bg-linear-to-br from-chart-1/10 via-chart-4/10 to-chart-3/10 rounded-3xl p-12 backdrop-blur-sm border border-border/50"
@@ -430,13 +431,13 @@ const tabs = ['story', 'skills', 'journey', 'interests'];
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <NuxtLink
               to="/projects"
-              class="min-w-[150px] text-center px-8 py-3 rounded-xl bg-primary text-primary-foreground font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              class="min-w-37.5 text-center px-8 py-3 rounded-xl bg-primary text-primary-foreground font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               View My Work
             </NuxtLink>
             <NuxtLink
               to="/contact"
-              class="min-w-[150px] text-center px-8 py-3 rounded-xl border border-border text-muted-foreground font-medium hover:bg-muted hover:text-foreground transition-all duration-300"
+              class="min-w-37.5 text-center px-8 py-3 rounded-xl border border-border text-muted-foreground font-medium hover:bg-muted hover:text-foreground transition-all duration-300"
             >
               Get In Touch
             </NuxtLink>

@@ -406,7 +406,7 @@ const contactMethods = [
     icon: 'fa:github',
     title: 'GitHub',
     value: '@wanto-production',
-    href: 'https://github.com/wanto-production',
+    href: 'https://github.com/ikhwan-satrio',
     description: 'Check out my code',
   },
   {
