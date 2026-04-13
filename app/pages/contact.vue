@@ -74,8 +74,11 @@
     </section>
 
     <!-- Contact Form & Info Section -->
-    <section
+    <motion.section
       class="w-full bg-linear-to-b from-background to-sidebar py-12 sm:py-16 md:py-20"
+      :initial="{ opacity: 0, y: 50 }"
+      :whileInView="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.8, ease: 'easeOut' }"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
@@ -305,11 +308,14 @@
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
 
     <!-- FAQ Section -->
-    <section
+    <motion.section
       class="w-full bg-linear-to-b from-sidebar to-background py-12 sm:py-16 md:py-20"
+      :initial="{ opacity: 0, y: 50 }"
+      :whileInView="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.8, ease: 'easeOut' }"
     >
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 sm:mb-16">
@@ -340,11 +346,14 @@
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
 
     <!-- Final CTA -->
-    <section
+    <motion.section
       class="w-full bg-linear-to-b from-background to-sidebar py-12 sm:py-16 md:py-20"
+      :initial="{ opacity: 0, y: 50 }"
+      :whileInView="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.8, ease: 'easeOut' }"
     >
       <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <div
@@ -377,13 +386,14 @@
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   </main>
 </template>
 
 <script setup lang="ts">
 import { useForm } from '@vorms/core';
 import z from 'zod';
+import { motion } from "motion-v"
 
 // Validasi
 const contactSchema = z.object({

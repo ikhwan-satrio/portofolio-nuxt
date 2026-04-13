@@ -12,10 +12,10 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'shadcn-nuxt',
     '@nuxtjs/color-mode',
-    '@vueuse/motion/nuxt',
     'nuxt-resend',
     '@nuxtjs/sitemap',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    'motion-v/nuxt'
   ],
   future: {
     compatibilityVersion: 4,

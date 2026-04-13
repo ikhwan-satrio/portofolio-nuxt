@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { motion } from 'motion-v';
 import image from '~/assets/images/nishimiya.jpeg';
 
 // SEO Meta Tags
@@ -126,7 +127,12 @@ const interests = [
 
     <!-- Content Sections -->
     <!-- Story Section -->
-    <section class="w-full py-24 flex items-center border-t-2 border-border">
+    <motion.section
+      class="w-full py-24 flex items-center border-t-2 border-border"
+      :initial="{ opacity: 0, y: 50 }"
+      :whileInView="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.8, ease: 'easeOut' }"
+    >
       <div class="max-w-6xl mx-auto px-6 w-full">
         <div class="space-y-12">
           <div class="text-center">
@@ -202,10 +208,15 @@ const interests = [
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
 
     <!-- Skills Section -->
-    <section class="w-full py-24 flex items-center bg-muted/30 border-t-2 border-border">
+    <motion.section
+      class="w-full py-24 flex items-center bg-muted/30 border-t-2 border-border"
+      :initial="{ opacity: 0, y: 50 }"
+      :whileInView="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.8, ease: 'easeOut' }"
+    >
       <div class="max-w-6xl mx-auto px-6 w-full">
         <div class="space-y-12">
           <div class="text-center">
@@ -257,10 +268,15 @@ const interests = [
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
 
     <!-- Journey Section -->
-    <section class="w-full py-24 flex items-center border-t-2 border-border">
+    <motion.section
+      class="w-full py-24 flex items-center border-t-2 border-border"
+      :initial="{ opacity: 0, y: 50 }"
+      :whileInView="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.8, ease: 'easeOut' }"
+    >
       <div class="max-w-6xl mx-auto px-6 w-full">
         <div class="space-y-12">
           <div class="text-center">
@@ -329,10 +345,15 @@ const interests = [
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
 
     <!-- Interests Section -->
-    <section class="w-full py-24 flex items-center bg-muted/30 border-t-2 border-border">
+    <motion.section
+      class="w-full py-24 flex items-center bg-muted/30 border-t-2 border-border"
+      :initial="{ opacity: 0, y: 50 }"
+      :whileInView="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.8, ease: 'easeOut' }"
+    >
       <div class="max-w-6xl mx-auto px-6 w-full">
         <div class="space-y-12">
           <div class="text-center">
@@ -384,7 +405,7 @@ const interests = [
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
 
     <!-- Music -->
     <FavoriteMusicSection />

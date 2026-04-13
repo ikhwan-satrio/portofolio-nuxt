@@ -100,7 +100,12 @@
     </section>
 
     <!-- All Projects Section -->
-    <section class="w-full py-20">
+    <motion.section
+      class="w-full py-20"
+      :initial="{ opacity: 0, y: 50 }"
+      :whileInView="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.8, ease: 'easeOut' }"
+    >
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
           <h2
@@ -135,9 +140,12 @@
 
         <!-- Projects Grid (inline) -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            v-for="project in filteredProjects"
+          <motion.div
+            v-for="(project, index) in filteredProjects"
             :key="project.id"
+            :initial="{ opacity: 0, y: 30 }"
+            :whileInView="{ opacity: 1, y: 0 }"
+            :transition="{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }"
             class="group bg-card/50 rounded-2xl overflow-hidden border border-border/50 backdrop-blur-sm hover:border-border transition-all duration-500 hover:transform hover:-translate-y-2 flex flex-col"
           >
             <!-- Project Image Placeholder -->
@@ -224,13 +232,18 @@
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
 
     <!-- CTA Section -->
-    <section class="w-full py-20">
+    <motion.section
+      class="w-full py-20"
+      :initial="{ opacity: 0, y: 50 }"
+      :whileInView="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.8, ease: 'easeOut' }"
+    >
       <div class="max-w-4xl mx-auto text-center px-6">
         <div
           class="bg-linear-to-br from-chart-1/10 via-chart-4/10 to-chart-3/10 rounded-3xl p-12 backdrop-blur-sm border border-border/50"
@@ -262,12 +275,13 @@
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   </main>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import { motion } from "motion-v"
 
 // Data
 const categories = [
