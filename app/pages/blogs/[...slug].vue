@@ -1,23 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
-
 const { data: blog } = await useAsyncData('page-' + route.path, () => {
   return queryCollection('blogs').path(route.path).first();
-});
-
-useHead({
-  title: blog?.value?.path.replaceAll('/blogs/', ''),
-  meta: [
-    { name: 'description', content: blog.value?.description },
-    {
-      name: 'keywords',
-      content: [
-        `post ${blog.value?.title}`,
-        'blog ikhwan satrio',
-        `blog ${blog.value?.title}`,
-      ],
-    },
-  ],
 });
 
 if (!blog.value) {
@@ -27,39 +11,52 @@ if (!blog.value) {
     fatal: true,
   });
 }
+
+useHead({
+  title: blog.value.title,
+  meta: [
+    { name: 'description', content: blog.value.description },
+    {
+      name: 'keywords',
+      content: [
+        `post ${blog.value.title}`,
+        'blog ikhwan satrio',
+        `blog ${blog.value.title}`,
+      ].join(', '),
+    },
+  ],
+});
 </script>
 
 <template>
-  <main
-    class="w-full min-h-screen bg-background text-foreground px-4 pb-10 pt-25"
-  >
-    <!-- Container Utama -->
-    <div class="max-w-6xl mx-auto space-y-16">
-      <!-- Artikel dan Gambar -->
-      <article class="flex flex-col lg:flex-row gap-10">
-        <NuxtLink href="/blogs" class="font-poppins font-bold text-lg">
-          <Icon name="fa:arrow-left" /> back
-        </NuxtLink>
-        <!-- Gambar utama -->
-        <div v-if="blog?.thumbnail" class="shrink-0 w-full lg:w-1/3">
-          <NuxtImg
-            :src="blog.thumbnail"
-            :alt="blog.title"
-            class="aspect-video w-full object-cover rounded-lg shadow-md"
-          />
-        </div>
+  <main class="w-full min-h-screen bg-background text-foreground px-4 pb-10 pt-25">
+    <div class="max-w-4xl mx-auto space-y-6">
 
-        <!-- Konten blog -->
-        <div class="flex-1 space-y-6 overflow-x-hidden">
-          <h1 class="text-3xl font-bold leading-tight">
-            {{ blog?.title }}
-          </h1>
-          <p class="text-gray-500 text-sm">Published on {{ blog?.date }}</p>
-          <div class="prose prose-ctp max-w-none py-2">
-            <ContentRenderer v-if="blog" :value="blog" />
-          </div>
+      <!-- Back Button -->
+      <NuxtLink
+        to="/blogs"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-border bg-card text-foreground font-medium hover:border-primary hover:text-primary transition-all duration-300 group shadow-sm hover:shadow-md"
+      >
+        <Icon
+          name="lucide:arrow-left"
+          class="w-4 h-4 group-hover:-translate-x-0.5 transition-transform"
+        />
+        <span>Back to Blogs</span>
+      </NuxtLink>
+
+      <!-- Artikel -->
+      <article class="space-y-6 overflow-x-hidden">
+        <h1 class="text-3xl font-bold leading-tight">
+          {{ blog?.title }}
+        </h1>
+        <p class="text-muted-foreground text-sm">
+          Published on {{ blog?.date }}
+        </p>
+        <div class="prose prose-ctp max-w-none py-2">
+          <ContentRenderer v-if="blog" :value="blog" />
         </div>
       </article>
+
     </div>
   </main>
 </template>

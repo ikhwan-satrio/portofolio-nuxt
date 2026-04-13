@@ -85,43 +85,35 @@ const formatDate = (date: string) => {
               ease: 'easeOut'
             }
           }"
-          class="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col w-full max-w-md group border border-border hover:border-primary/50">
-          <!-- Thumbnail -->
-          <div v-if="blog.thumbnail" class="h-48 w-full overflow-hidden">
-            <NuxtImg :src="blog.thumbnail" :alt="blog.title" loading="lazy"
-              class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div v-else class="flex justify-center items-center h-48 w-full bg-muted">
-            <p class="text-muted-foreground">No image</p>
-          </div>
-
+          class="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col w-full max-w-2xl group border-2 border-border hover:border-primary">
           <!-- Content -->
-          <div class="p-5 flex flex-col justify-between flex-1">
-            <div class="space-y-2">
-              <h2 class="text-xl font-semibold text-primary group-hover:text-chart-3 transition-colors">
+          <div class="p-6 flex flex-col flex-1">
+            <div class="space-y-3">
+              <h2 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                 {{ blog.title }}
               </h2>
 
               <div class="flex items-center gap-3 text-xs text-muted-foreground">
                 <time>{{ formatDate(blog.date) }}</time>
-                <span v-if="blog.lang" class="text-chart-3">lang: {{ blog.lang }}</span>
+                <span v-if="blog.lang" class="text-primary font-medium">•</span>
+                <span v-if="blog.lang" class="text-primary">lang: {{ blog.lang }}</span>
               </div>
 
-              <p class="text-sm text-foreground/80 line-clamp-3 leading-relaxed">
+              <p class="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
                 {{ blog.description }}
               </p>
 
               <!-- Tags -->
               <div v-if="blog.tags && blog.tags.length > 0" class="flex flex-wrap gap-2 pt-2">
                 <span v-for="tag in blog.tags.slice(0, 3)" :key="tag"
-                  class="px-2 py-1 text-xs rounded-full bg-secondary text-secondary-foreground border border-border">
+                  class="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground border-2 border-border group-hover:border-primary/50 transition-colors">
                   {{ tag }}
                 </span>
               </div>
             </div>
 
-            <p class="mt-4 text-chart-3 text-sm group-hover:underline flex items-center gap-1">
-              📖 Read more
+            <p class="mt-auto pt-4 text-primary text-sm group-hover:underline flex items-center gap-1 font-medium">
+              Read more
               <Icon name="lucide:arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </p>
           </div>
