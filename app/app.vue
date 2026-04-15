@@ -25,6 +25,6 @@ useHead({
   <NuxtLoadingIndicator />
   <Header />
   <NuxtPage />
-  <Footer />
   <RespectTooltip />
+  <Footer />
 </template>
