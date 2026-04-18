@@ -415,24 +415,37 @@ const contactMethods = [
   {
     icon: 'fa:github',
     title: 'GitHub',
-    value: '@wanto-production',
+    value: '@ikhwan-satrio',
     href: 'https://github.com/ikhwan-satrio',
     description: 'Check out my code',
   },
   {
-    icon: 'fa:linkedin',
-    title: 'LinkedIn',
-    value: 'Ikhwan Satrio',
-    href: 'https://linkedin.com/in/ikhwan-satrio',
-    description: "Let's connect professionally",
+    icon: 'fa:instagram',
+    title: 'Instagram',
+    value: '@wantoobrrrrrr',
+    href: 'https://www.instagram.com/wantoobrrrrrr',
   },
   {
-    icon: 'fa:twitter',
-    title: 'Twitter',
-    value: '@ikhwansatrio',
-    href: 'https://twitter.com/ikhwansatrio',
-    description: 'Follow me for updates',
+    icon: 'fa:reddit',
+    title: 'Reddit',
+    value: 'u/wantoajjh',
+    href: 'https://www.reddit.com/user/Gusionajjh',
+    description: 'Join the discussion',
   },
+  // {
+  //   icon: 'fa:linkedin',
+  //   title: 'LinkedIn',
+  //   value: 'Ikhwan Satrio',
+  //   href: 'https://linkedin.com/in/ikhwan-satrio',
+  //   description: "Let's connect professionally",
+  // },
+  // {
+  //   icon: 'fa:twitter',
+  //   title: 'Twitter',
+  //   value: '@ikhwansatrio',
+  //   href: 'https://twitter.com/ikhwansatrio',
+  //   description: 'Follow me for updates',
+  // },
 ];
 
 const faqs = [

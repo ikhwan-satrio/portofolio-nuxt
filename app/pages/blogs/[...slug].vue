@@ -29,9 +29,10 @@ useHead({
 </script>
 
 <template>
-  <main class="w-full min-h-screen bg-background text-foreground px-4 pb-10 pt-25">
+  <main
+    class="w-full min-h-screen bg-background text-foreground px-4 pb-10 pt-25"
+  >
     <div class="max-w-4xl mx-auto space-y-6">
-
       <!-- Back Button -->
       <NuxtLink
         to="/blogs"
@@ -56,7 +57,6 @@ useHead({
           <ContentRenderer v-if="blog" :value="blog" />
         </div>
       </article>
-
     </div>
   </main>
 </template>

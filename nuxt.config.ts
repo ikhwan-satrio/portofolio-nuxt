@@ -25,7 +25,15 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: [
+        'class-variance-authority',
+        'reka-ui',
+        'clsx',
+        'tailwind-merge',
+      ]
+    }
   },
   content: {
     database: {
