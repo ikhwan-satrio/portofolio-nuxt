@@ -5,9 +5,6 @@ description: "How to fix 'qs: symbol lookup error: qs: undefined symbol: *ZN15Qt
 tags: [Tech, Error-solving, Linux]
 lang: "en"
 ---
-
-# Resolving Qt Wayland Symbol Lookup Error After System Update
-
 ## The Problem
 
 After updating Arch Linux and Qt packages, I encountered this error when trying to reload my Caelestia shell:
